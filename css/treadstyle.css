@@ -38,9 +38,37 @@
               transform-origin: bottom center;
     }
   }
+
+.treadfield{
+    display: block;
+    width: 70%;
+}
+
+.treadcreate{
+    padding-top: 15px;
+    height: 10vh;
+    padding-left: 5px;
+    border-radius: 25px;
+    width: 90%;
+    max-width: 90%;
+    border: 0;
+}
+
+.treadsend{
+    width: 7%;
+    border: 0;
+    border-radius: 25px;
+}
+
+.treadsend:hover {
+    background-color:#acacac;
+}
+
+.treadsend:active{
+    background-color: white;
+}
   
 .mainblock {
-    width: 40%;
     margin: 10px;
     border-radius: 50px;
     background: #e0e0e0;
