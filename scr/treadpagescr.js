@@ -16,7 +16,8 @@ function nwtread (){
     autor.append(name)
     let date = document.createElement('div')
     date.className = 'treaddate'
-    date.innerHTML = 'date'
+    let dateNow = new Date()
+    date.innerHTML = `${dateNow.getDate()}.${dateNow.getMonth()+1}.${dateNow.getFullYear()} ${dateNow.getHours()}:${dateNow.getMinutes()}`
     autor.append(date)
     let content = document.createElement('div')
     content.className = 'treadcontent'
