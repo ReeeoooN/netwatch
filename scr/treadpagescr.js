@@ -1,9 +1,10 @@
 const btn = document.querySelector('.treadsend')
+const treadtext = document.querySelector('.treadcreate')
 
-btn.onclick = ()=>{
-    const treadtext = document.querySelector('.treadcreate')
+function nwtread (){
     const treadfield = document.querySelector('.treadblock')
-    let newtread = document.createElement('div');
+
+        let newtread = document.createElement('div');
     newtread.className = 'mainblock'
     treadfield.prepend(newtread)
     let autor = document.createElement('div')
@@ -38,3 +39,14 @@ btn.onclick = ()=>{
     comments.append(eye)
     treadtext.value = ''; 
 }
+
+btn.onclick = nwtread
+treadtext.onfocus = ()=>{
+    document.addEventListener('keydown', (key)=>{
+        if (treadtext.value !== '' && (key.code == 'Enter' && key.shiftKey)){
+            console.log(treadtext);
+            nwtread()
+        } 
+    })
+}
+
