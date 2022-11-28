@@ -39,6 +39,41 @@
     }
   }
 
+@-webkit-keyframes swing-top-fwd {
+    0% {
+      -webkit-transform: rotateX(0);
+              transform: rotateX(0);
+      -webkit-transform-origin: top;
+              transform-origin: top;
+    }
+    100% {
+      -webkit-transform: rotateX(180deg);
+              transform: rotateX(180deg);
+      -webkit-transform-origin: top;
+              transform-origin: top;
+    }
+  }
+  @keyframes swing-top-fwd {
+    0% {
+      -webkit-transform: rotateX(0);
+              transform: rotateX(0);
+      -webkit-transform-origin: top;
+              transform-origin: top;
+    }
+    100% {
+      -webkit-transform: rotateX(180deg);
+              transform: rotateX(180deg);
+      -webkit-transform-origin: top;
+              transform-origin: top;
+    }
+  }
+  
+
+  .newtreadanim {
+	-webkit-animation: swing-top-fwd 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) reverse both;
+	        animation: swing-top-fwd 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) reverse both;
+}
+
 .treadfield{
     display: block;
     width: 70%;
@@ -79,6 +114,9 @@
 }
 .creator {
     color:dimgrey;
+}
+.creator > i {
+    float: right;
 }
 .creator, .tegs{
     display: flex;
@@ -129,4 +167,23 @@ box-shadow:  -15px 15px 56px #acacac,
 background: #e0e0e0;
 box-shadow: inset 20px 20px 40px #c3c3c3,
             inset -20px -20px 40px #fdfdfd;
+}
+.createteg>input {
+    border-radius: 25px;
+    border: 0;
+}
+
+.addedtegs{
+    display: flex;
+}
+
+.addedtegs>div{
+    padding: 3px;
+    margin-bottom: 2px;
+    border-radius: 14px;
+background: #e0e0e0;
+box-shadow: inset 20px 20px 40px #c3c3c3,
+            inset -20px -20px 40px #fdfdfd;
+    background: rgb(34,193,195);
+background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(164,159,147,1) 100%);
 }

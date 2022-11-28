@@ -1,11 +1,12 @@
 const btn = document.querySelector('.treadsend')
 const treadtext = document.querySelector('.treadcreate')
+var delTreadBtn = document.querySelectorAll('.fa-trash')
+const url = 'http://localhost:3000/'
 
 function nwtread (){
     const treadfield = document.querySelector('.treadblock')
-
-        let newtread = document.createElement('div');
-    newtread.className = 'mainblock'
+    let newtread = document.createElement('div');
+    newtread.className = 'mainblock newtreadanim'
     treadfield.prepend(newtread)
     let autor = document.createElement('div')
     autor.className = 'creator'
@@ -19,6 +20,9 @@ function nwtread (){
     let dateNow = new Date()
     date.innerHTML = `${dateNow.getDate()}.${dateNow.getMonth()+1}.${dateNow.getFullYear()} ${dateNow.getHours()}:${dateNow.getMinutes()}`
     autor.append(date)
+    let delBtn = document.createElement('i')
+    delBtn.className = 'fa fa-trash'
+    autor.append(delBtn)
     let content = document.createElement('div')
     content.className = 'treadcontent'
     newtread.append(content)
@@ -39,6 +43,15 @@ function nwtread (){
     eye.className = 'fa fa-eye'
     comments.append(eye)
     treadtext.value = ''; 
+    delTreadBtn = document.querySelectorAll('.fa-trash')
+    let treadsend = {
+        text: treadtext.value,
+        date: dateNow,
+    }
+    fetch(url, {
+        method: 'POST',
+        body: JSON.stringify(treadsend)
+    })
 }
 
 btn.onclick = nwtread
@@ -50,4 +63,6 @@ treadtext.onfocus = ()=>{
         } 
     })
 }
-
+delTreadBtn.onclick = ()=>{
+    console.log(delTreadBtn.parrentNode);
+}
